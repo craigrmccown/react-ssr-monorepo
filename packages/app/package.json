@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev:client": "env $(cat .env | grep -v \"^#\") webpack-dev-server --config-name client --mode development --hot",
+    "dev:server": "env $(cat .env | grep -v \"^#\") webpack --config-name server --mode development --watch",
+    "dev:start": "env $(cat .env | grep -v \"^#\") nodemon --preserve-symlinks dist/server/bundle.js",
+    "dev": "env $(cat .env | grep -v \"^#\") webpack --config-name server --mode development && concurrently -k 'yarn dev:client' 'yarn dev:server' 'yarn dev:start'"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "common-tags": "^1.8.0",
+    "express": "^4.16.4",
+    "express-promise-router": "^3.0.3",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
+  }
+}
