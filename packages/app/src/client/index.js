@@ -1,8 +1,10 @@
-import "@babel/polyfill";
+/* eslint-env browser */
 
-import React from "react";
-import ReactDOM from "react-dom";
+import '@babel/polyfill'
 
-import App from "../shared/App";
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.hydrate(<App />, document.getElementById("root"));
+import App from '../shared/App'
+
+ReactDOM.hydrate(<App />, document.getElementById('root'))

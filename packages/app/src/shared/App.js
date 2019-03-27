@@ -1,22 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from 'react'
 
-class App extends React.Component {
-  state = { message: "SSR successful." };
+const App = () => {
+  const [message, setMessage] = useState('SSR successful.')
 
-  componentDidMount() {
-    this.setState({ message: "App successfully hydrated." });
-  }
+  useEffect(() => {
+    setMessage('App successfully hydrated.')
+  }, [])
 
-  render() {
-    const { message } = this.state;
-
-    return (
-      <div>
-        <h1>SSR React App</h1>
-        <div>{message}</div>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>SSR React App</h1>
+      <div>{message}</div>
+    </div>
+  )
 }
 
-export default App;
+export default App
